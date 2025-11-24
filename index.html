@@ -40,9 +40,14 @@
         .section-title {
             font-family: 'Montserrat', sans-serif;
             font-weight: 800;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #1C2C86;
             letter-spacing: -0.02em;
+        }
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
         }
         .card-shadow {
             box-shadow: 0 10px 25px -5px rgba(28, 44, 134, 0.1), 0 8px 10px -6px rgba(28, 44, 134, 0.1);
@@ -213,142 +218,186 @@
             opacity: 0;
             animation: fadeIn 1s ease-out 0.6s forwards;
         }
+        
+        /* Mobile optimizations */
+        @media (max-width: 640px) {
+            .chart-container {
+                height: 200px !important;
+            }
+            .arch-box {
+                padding: 0.75rem;
+                font-size: 0.875rem;
+            }
+            .arch-box .text-2xl {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 250px;
+            }
+        }
+        
+        /* Better touch targets for mobile */
+        @media (max-width: 768px) {
+            button, a {
+                min-height: 44px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        
+        /* Prevent horizontal scroll */
+        body {
+            overflow-x: hidden;
+        }
+        
+        /* Better text wrapping on mobile */
+        @media (max-width: 640px) {
+            h1, h2, h3, h4, h5, h6 {
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-metallic-gray">
 
     <!-- NAV -->
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b-4 border-accent-green px-6 py-3 flex justify-between items-center">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b-4 border-accent-green px-4 md:px-6 py-2 md:py-3 flex justify-between items-center">
         <div class="flex items-center">
-            <img src="metalprest_logo.png" alt="Metalprest" class="h-10 mr-4">
-            <span class="font-heading font-bold text-corporate-blue text-lg hidden md:block">Plan Estratégico 2025-2026</span>
+            <img src="metalprest_logo.png" alt="Metalprest" class="h-8 md:h-10 mr-2 md:mr-4">
+            <span class="font-heading font-bold text-corporate-blue text-sm md:text-lg hidden md:block">Plan Estratégico 2025-2026</span>
         </div>
-        <div class="text-xs font-semibold text-metallic-gray bg-gray-100 px-3 py-1 rounded-full">
-            Proyecto Integral (12 Meses)
+        <div class="text-xs font-semibold text-metallic-gray bg-gray-100 px-2 md:px-3 py-1 rounded-full whitespace-nowrap">
+            <span class="hidden sm:inline">Proyecto Integral </span>(12 Meses)
         </div>
     </nav>
 
     <!-- HERO -->
     <header class="relative bg-corporate-blue text-white overflow-hidden">
         <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
-        <div class="container mx-auto px-6 py-16 relative z-10 text-center">
-            <div class="inline-block bg-accent-green text-corporate-blue font-bold px-4 py-1 rounded-full mb-4 text-sm uppercase tracking-wider shadow-lg">
+        <div class="container mx-auto px-4 md:px-6 py-12 md:py-16 relative z-10 text-center">
+            <div class="inline-block bg-accent-green text-corporate-blue font-bold px-3 md:px-4 py-1 rounded-full mb-4 text-xs md:text-sm uppercase tracking-wider shadow-lg">
                 Visión Metalprest 2.0
             </div>
-            <h1 class="font-heading font-extrabold text-4xl md:text-6xl mb-4 leading-tight">
+            <h1 class="font-heading font-extrabold text-2xl sm:text-3xl md:text-5xl lg:text-6xl mb-4 leading-tight px-2">
                 Ingeniería Cognitiva:<br/><span class="text-accent-green">Escalable y de Alto Impacto</span>
             </h1>
-            <p class="text-xl md:text-2xl font-light text-gray-200 max-w-3xl mx-auto mb-8">
+            <p class="text-base sm:text-lg md:text-xl lg:text-2xl font-light text-gray-200 max-w-3xl mx-auto mb-6 md:mb-8 px-4">
                 Desplegamos un <strong>Squad de Alto Rendimiento</strong> para entregar una solución de clase mundial en 12 meses, apalancada en Nube Pública y Modelos Multimodales.
             </p>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-8 border-t border-white/20 pt-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto mt-6 md:mt-8 border-t border-white/20 pt-6 md:pt-8 px-4">
                 <div>
-                    <div class="text-3xl font-bold text-accent-green">1 Año</div>
-                    <div class="text-sm text-gray-300">Tiempo de Ejecución</div>
+                    <div class="text-xl sm:text-2xl md:text-3xl font-bold text-accent-green">1 Año</div>
+                    <div class="text-xs sm:text-sm text-gray-300 mt-1">Tiempo de Ejecución</div>
                 </div>
                 <div>
-                    <div class="text-3xl font-bold text-accent-green">AWS / GCP</div>
-                    <div class="text-sm text-gray-300">Infraestructura Cloud</div>
+                    <div class="text-xl sm:text-2xl md:text-3xl font-bold text-accent-green">AWS / GCP</div>
+                    <div class="text-xs sm:text-sm text-gray-300 mt-1">Infraestructura Cloud</div>
                 </div>
                 <div>
-                    <div class="text-3xl font-bold text-accent-green">Vision 1st</div>
-                    <div class="text-sm text-gray-300">Tecnología de Punta</div>
+                    <div class="text-xl sm:text-2xl md:text-3xl font-bold text-accent-green">Vision 1st</div>
+                    <div class="text-xs sm:text-sm text-gray-300 mt-1">Tecnología de Punta</div>
                 </div>
                 <div>
-                    <div class="text-3xl font-bold text-accent-green">Squad</div>
-                    <div class="text-sm text-gray-300">Equipo Experto Dedicado</div>
+                    <div class="text-xl sm:text-2xl md:text-3xl font-bold text-accent-green">Squad</div>
+                    <div class="text-xs sm:text-sm text-gray-300 mt-1">Equipo Experto Dedicado</div>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="container mx-auto px-4 md:px-8 py-12 max-w-6xl">
+    <div class="container mx-auto px-4 md:px-6 lg:px-8 py-8 md:py-12 max-w-6xl">
 
         <!-- SECCIÓN 1: EL EQUIPO -->
-        <section class="mb-16">
-            <div class="bg-white rounded-2xl card-shadow p-8 border-l-8 border-accent-green fade-in-up">
-                <div class="flex flex-col md:flex-row items-center gap-8">
-                    <div class="md:w-3/4">
-                        <h3 class="section-title mb-4">Ejecución Experta y Focalizada</h3>
-                        <p class="mb-4 text-lg">
+        <section class="mb-12 md:mb-16">
+            <div class="bg-white rounded-xl md:rounded-2xl card-shadow p-5 md:p-8 border-l-4 md:border-l-8 border-accent-green fade-in-up">
+                <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
+                    <div class="w-full md:w-3/4">
+                        <h3 class="section-title mb-3 md:mb-4">Ejecución Experta y Focalizada</h3>
+                        <p class="mb-4 text-base md:text-lg leading-relaxed">
                             Para garantizar el éxito en este cronograma estratégico de 12 meses, asignamos un <strong>Squad Multidisciplinario de Élite</strong>. No es solo desarrollo de software; es consultoría de procesos, ingeniería de datos y arquitectura cloud en un solo equipo.
                         </p>
-                        <div class="flex flex-wrap gap-3 mt-4">
-                            <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-bold text-corporate-blue">Arquitectos Cloud (AWS/GCP)</span>
-                            <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-bold text-corporate-blue">Ingenieros de MLOps</span>
-                            <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-bold text-corporate-blue">Desarrolladores Full-Stack</span>
-                            <span class="px-4 py-2 bg-gray-100 rounded-full text-sm font-bold text-corporate-blue">Expertos en UX Industrial</span>
+                        <div class="flex flex-wrap gap-2 md:gap-3 mt-4">
+                            <span class="px-3 md:px-4 py-1.5 md:py-2 bg-gray-100 rounded-full text-xs md:text-sm font-bold text-corporate-blue">Arquitectos Cloud (AWS/GCP)</span>
+                            <span class="px-3 md:px-4 py-1.5 md:py-2 bg-gray-100 rounded-full text-xs md:text-sm font-bold text-corporate-blue">Ingenieros de MLOps</span>
+                            <span class="px-3 md:px-4 py-1.5 md:py-2 bg-gray-100 rounded-full text-xs md:text-sm font-bold text-corporate-blue">Desarrolladores Full-Stack</span>
+                            <span class="px-3 md:px-4 py-1.5 md:py-2 bg-gray-100 rounded-full text-xs md:text-sm font-bold text-corporate-blue">Expertos en UX Industrial</span>
                         </div>
                     </div>
-                    <div class="md:w-1/4 text-center">
-                         <div class="text-6xl mb-2">🤝</div>
-                         <div class="font-bold text-metallic-gray">Partners Tecnológicos</div>
+                    <div class="w-full md:w-1/4 text-center mt-4 md:mt-0">
+                         <div class="text-5xl md:text-6xl mb-2">🤝</div>
+                         <div class="font-bold text-metallic-gray text-sm md:text-base">Partners Tecnológicos</div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- SECCIÓN 2: ARQUITECTURA DE SOLUCIÓN -->
-        <section class="mb-20">
-            <div class="text-center mb-10 fade-in-up delay-200">
+        <section class="mb-12 md:mb-20">
+            <div class="text-center mb-6 md:mb-10 fade-in-up delay-200 px-2">
                 <h3 class="section-title">Arquitectura de Solución Cloud-Native</h3>
-                <p class="text-xl text-metallic-gray mt-2">Diseñada con las mejores prácticas de mercado para Escalabilidad y Resiliencia.</p>
+                <p class="text-base md:text-xl text-metallic-gray mt-2">Diseñada con las mejores prácticas de mercado para Escalabilidad y Resiliencia.</p>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl card-shadow relative overflow-hidden">
+            <div class="bg-white p-4 md:p-6 lg:p-8 rounded-xl md:rounded-2xl card-shadow relative overflow-hidden">
                 <!-- Decorative BG -->
-                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10"></div>
-                <div class="absolute bottom-0 left-0 w-64 h-64 bg-green-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10"></div>
+                <div class="absolute top-0 right-0 w-32 md:w-64 h-32 md:h-64 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10"></div>
+                <div class="absolute bottom-0 left-0 w-32 md:w-64 h-32 md:h-64 bg-green-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10"></div>
 
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 items-center text-center relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6 items-center text-center relative z-10">
                     
                     <!-- COL 1: FUENTES -->
-                    <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-3 md:gap-4">
                         <div class="font-bold text-gray-500 mb-2 uppercase text-xs tracking-wider">Entrada</div>
                         <div class="arch-box bg-gray-50">
-                            <div class="text-2xl">📧</div>
-                            <div class="font-bold text-sm">Google Workspace</div>
+                            <div class="text-xl md:text-2xl">📧</div>
+                            <div class="font-bold text-xs md:text-sm">Google Workspace</div>
                             <div class="text-xs text-gray-500">Emails & Adjuntos</div>
                         </div>
                         <div class="arch-box bg-gray-50">
-                            <div class="text-2xl">📄</div>
-                            <div class="font-bold text-sm">Documentos</div>
+                            <div class="text-xl md:text-2xl">📄</div>
+                            <div class="font-bold text-xs md:text-sm">Documentos</div>
                             <div class="text-xs text-gray-500">PDFs / Planos / TIF</div>
                         </div>
                     </div>
 
                     <!-- ARROW -->
                     <div class="hidden md:flex justify-center text-gray-300 text-2xl">➔</div>
+                    <div class="md:hidden flex justify-center text-gray-300 text-xl py-2">↓</div>
 
                     <!-- COL 2: CLOUD CORE (AWS/GCP) -->
-                    <div class="col-span-1 md:col-span-3 bg-slate-50 border border-slate-200 rounded-xl p-6 relative">
-                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-4 py-1 border border-slate-200 rounded-full shadow-sm text-xs font-bold text-corporate-blue">
-                            INFRAESTRUCTURA SEGURA (AWS / GCP)
+                    <div class="col-span-1 md:col-span-3 bg-slate-50 border border-slate-200 rounded-lg md:rounded-xl p-4 md:p-6 relative mt-2 md:mt-0">
+                        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white px-2 md:px-4 py-1 border border-slate-200 rounded-full shadow-sm text-xs font-bold text-corporate-blue whitespace-nowrap">
+                            <span class="hidden sm:inline">INFRAESTRUCTURA SEGURA </span>(AWS / GCP)
                         </div>
 
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-4 md:mt-0">
                             <!-- Orchestration -->
                             <div class="flex flex-col gap-2">
                                 <div class="arch-box border-l-4 border-l-accent-green">
                                     <span class="cloud-badge">Compute Engine / EC2</span>
-                                    <div class="font-bold text-corporate-blue">Orquestador n8n</div>
+                                    <div class="font-bold text-corporate-blue text-xs md:text-sm">Orquestador n8n</div>
                                     <div class="text-xs text-gray-600 mt-1">Gestión de Flujos & Reglas de Negocio</div>
                                 </div>
-                                <div class="arch-connector"></div>
-                                <div class="arch-box">
+                                <div class="arch-connector hidden md:block"></div>
+                                <div class="arch-box mt-2 md:mt-0">
                                     <span class="cloud-badge">Cloud Storage / S3</span>
-                                    <div class="font-bold text-gray-700">Data Lake</div>
+                                    <div class="font-bold text-gray-700 text-xs md:text-sm">Data Lake</div>
                                     <div class="text-xs text-gray-600">Almacenamiento Seguro de Planos</div>
                                 </div>
                             </div>
 
                             <!-- Intelligence -->
                             <div class="flex flex-col gap-2 justify-center">
-                                <div class="arch-box border-2 border-corporate-blue transform scale-105 shadow-md">
+                                <div class="arch-box border-2 border-corporate-blue md:transform md:scale-105 shadow-md">
                                     <span class="cloud-badge">Vertex AI / Bedrock</span>
-                                    <div class="text-2xl mb-1">🧠</div>
-                                    <div class="font-bold text-corporate-blue">Motor "Vision-First"</div>
+                                    <div class="text-xl md:text-2xl mb-1">🧠</div>
+                                    <div class="font-bold text-corporate-blue text-xs md:text-sm">Motor "Vision-First"</div>
                                     <div class="text-xs text-gray-600 font-semibold mt-1">Gemini 1.5 Pro / Qwen2.5</div>
                                     <div class="text-xs text-accent-green font-bold mt-1">Extracción Multimodal</div>
                                 </div>
@@ -358,13 +407,13 @@
                             <div class="flex flex-col gap-2">
                                 <div class="arch-box">
                                     <span class="cloud-badge">Cloud Run / Lambda</span>
-                                    <div class="font-bold text-gray-700">FastAPI Backend</div>
+                                    <div class="font-bold text-gray-700 text-xs md:text-sm">FastAPI Backend</div>
                                     <div class="text-xs text-gray-600">Lógica & Validación</div>
                                 </div>
-                                <div class="arch-connector"></div>
-                                <div class="arch-box border-l-4 border-l-corporate-blue">
+                                <div class="arch-connector hidden md:block"></div>
+                                <div class="arch-box border-l-4 border-l-corporate-blue mt-2 md:mt-0">
                                     <span class="cloud-badge">RDS / Cloud SQL</span>
-                                    <div class="font-bold text-gray-700">PostgreSQL + Vector</div>
+                                    <div class="font-bold text-gray-700 text-xs md:text-sm">PostgreSQL + Vector</div>
                                     <div class="text-xs text-gray-600">Inventario & RAG</div>
                                 </div>
                             </div>
@@ -373,13 +422,14 @@
 
                     <!-- ARROW -->
                     <div class="hidden md:flex justify-center text-gray-300 text-2xl">➔</div>
+                    <div class="md:hidden flex justify-center text-gray-300 text-xl py-2">↓</div>
 
                     <!-- COL 3: USUARIO -->
-                    <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-3 md:gap-4 mt-2 md:mt-0">
                         <div class="font-bold text-gray-500 mb-2 uppercase text-xs tracking-wider">Usuario Final</div>
                         <div class="arch-box bg-yellow-50 border-yellow-200">
-                            <div class="text-2xl">👨‍💻</div>
-                            <div class="font-bold text-sm">Dashboard QAD</div>
+                            <div class="text-xl md:text-2xl">👨‍💻</div>
+                            <div class="font-bold text-xs md:text-sm">Dashboard QAD</div>
                             <div class="text-xs text-gray-600">Angular (App Web)</div>
                             <div class="text-xs font-bold text-yellow-600 mt-1">Revisión Humana</div>
                         </div>
@@ -387,7 +437,7 @@
                 </div>
             </div>
             
-            <div class="mt-6 flex justify-center gap-6 text-sm text-gray-500">
+            <div class="mt-4 md:mt-6 flex flex-wrap justify-center gap-3 md:gap-6 text-xs md:text-sm text-gray-500 px-4">
                 <div class="flex items-center"><span class="w-2 h-2 bg-accent-green rounded-full mr-2"></span>Alta Disponibilidad</div>
                 <div class="flex items-center"><span class="w-2 h-2 bg-accent-green rounded-full mr-2"></span>Seguridad SOC2</div>
                 <div class="flex items-center"><span class="w-2 h-2 bg-accent-green rounded-full mr-2"></span>Escalado Automático</div>
@@ -395,10 +445,10 @@
         </section>
 
         <!-- SECCIÓN 3: HOJA DE RUTA (12 Meses) -->
-        <section class="mb-16 relative">
-            <div class="text-center mb-12 fade-in-up delay-300">
+        <section class="mb-12 md:mb-16 relative">
+            <div class="text-center mb-8 md:mb-12 fade-in-up delay-300 px-2">
                 <h3 class="section-title">Cronograma de Ejecución (12 Meses)</h3>
-                <p class="text-xl text-metallic-gray mt-2 max-w-3xl mx-auto">
+                <p class="text-base md:text-xl text-metallic-gray mt-2 max-w-3xl mx-auto">
                     Optimizamos la entrega de valor concentrando esfuerzos. El MVP estará operativo en el primer cuatrimestre, con integraciones avanzadas en los siguientes 8 meses.
                 </p>
             </div>
@@ -407,55 +457,55 @@
                 <div class="timeline-line hidden md:block"></div>
 
                 <!-- FASE 1 -->
-                <div class="flex flex-col md:flex-row justify-between items-center w-full mb-12 timeline-item">
+                <div class="flex flex-col md:flex-row justify-between items-center w-full mb-8 md:mb-12 timeline-item">
                     <div class="order-1 md:w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-accent-green shadow-xl w-14 h-14 rounded-full justify-center font-bold text-white border-4 border-white text-sm text-center leading-tight">Mes<br>1-4</div>
-                    <div class="order-1 bg-white rounded-xl card-shadow p-6 md:w-5/12 border-t-4 border-accent-green mt-4 md:mt-0">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="font-heading font-bold text-xl text-corporate-blue">Fase 1: Núcleo Operativo</h4>
-                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded">MVP Robusto</span>
+                    <div class="z-20 flex items-center order-1 bg-accent-green shadow-xl w-12 h-12 md:w-14 md:h-14 rounded-full justify-center font-bold text-white border-4 border-white text-xs md:text-sm text-center leading-tight">Mes<br>1-4</div>
+                    <div class="order-1 bg-white rounded-lg md:rounded-xl card-shadow p-4 md:p-6 w-full md:w-5/12 border-t-4 border-accent-green mt-4 md:mt-0">
+                        <div class="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
+                            <h4 class="font-heading font-bold text-lg md:text-xl text-corporate-blue">Fase 1: Núcleo Operativo</h4>
+                            <span class="bg-green-100 text-green-800 text-xs font-bold px-2 py-1 rounded whitespace-nowrap">MVP Robusto</span>
                         </div>
-                        <p class="text-sm text-gray-600 mb-4">Despliegue del motor de visión y dashboard de aprobación básico.</p>
-                        <ul class="text-sm space-y-2 text-metallic-gray">
-                            <li class="flex items-start"><span class="text-accent-green mr-2">✓</span> <strong>Diseño de Arquitectura:</strong> Definición de modelos de datos y cloud.</li>
-                            <li class="flex items-start"><span class="text-accent-green mr-2">✓</span> <strong>Motor Vision-First:</strong> Lectura de planos activa.</li>
-                            <li class="flex items-start"><span class="text-accent-green mr-2">✓</span> <strong>Human-in-the-Loop:</strong> Interfaz de validación operativa.</li>
+                        <p class="text-xs md:text-sm text-gray-600 mb-3 md:mb-4">Despliegue del motor de visión y dashboard de aprobación básico.</p>
+                        <ul class="text-xs md:text-sm space-y-1.5 md:space-y-2 text-metallic-gray">
+                            <li class="flex items-start"><span class="text-accent-green mr-2 flex-shrink-0">✓</span> <span><strong>Diseño de Arquitectura:</strong> Definición de modelos de datos y cloud.</span></li>
+                            <li class="flex items-start"><span class="text-accent-green mr-2 flex-shrink-0">✓</span> <span><strong>Motor Vision-First:</strong> Lectura de planos activa.</span></li>
+                            <li class="flex items-start"><span class="text-accent-green mr-2 flex-shrink-0">✓</span> <span><strong>Human-in-the-Loop:</strong> Interfaz de validación operativa.</span></li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- FASE 2 -->
-                <div class="flex flex-col md:flex-row justify-between items-center w-full mb-12 timeline-item delay-200">
-                    <div class="order-1 bg-white rounded-xl card-shadow p-6 md:w-5/12 border-t-4 border-corporate-blue mt-4 md:mt-0 md:text-right">
-                        <div class="flex justify-between items-start mb-2 md:flex-row-reverse">
-                            <h4 class="font-heading font-bold text-xl text-corporate-blue">Fase 2: Integración Total</h4>
-                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Escala</span>
+                <div class="flex flex-col md:flex-row justify-between items-center w-full mb-8 md:mb-12 timeline-item delay-200">
+                    <div class="order-1 bg-white rounded-lg md:rounded-xl card-shadow p-4 md:p-6 w-full md:w-5/12 border-t-4 border-corporate-blue mt-4 md:mt-0 md:text-right">
+                        <div class="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2 md:flex-row-reverse">
+                            <h4 class="font-heading font-bold text-lg md:text-xl text-corporate-blue">Fase 2: Integración Total</h4>
+                            <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded whitespace-nowrap">Escala</span>
                         </div>
-                        <p class="text-sm text-gray-600 mb-4">Conectividad profunda con ERP y proveedores externos. Integración acelerada con APIs y sistemas existentes.</p>
-                        <ul class="text-sm space-y-2 text-metallic-gray inline-block text-left">
-                            <li class="flex items-start"><span class="text-corporate-blue mr-2">✓</span> <strong>Agentes de Compras:</strong> Bots de cotización externa.</li>
-                            <li class="flex items-start"><span class="text-corporate-blue mr-2">✓</span> <strong>Precios Predictivos:</strong> IA analizando márgenes históricos.</li>
-                            <li class="flex items-start"><span class="text-corporate-blue mr-2">✓</span> <strong>Integración ERP:</strong> Conexión directa con sistemas de gestión.</li>
+                        <p class="text-xs md:text-sm text-gray-600 mb-3 md:mb-4 md:text-right">Conectividad profunda con ERP y proveedores externos. Integración acelerada con APIs y sistemas existentes.</p>
+                        <ul class="text-xs md:text-sm space-y-1.5 md:space-y-2 text-metallic-gray inline-block text-left md:text-right">
+                            <li class="flex items-start md:flex-row-reverse md:text-right"><span class="text-corporate-blue mr-2 md:ml-2 md:mr-0 flex-shrink-0">✓</span> <span><strong>Agentes de Compras:</strong> Bots de cotización externa.</span></li>
+                            <li class="flex items-start md:flex-row-reverse md:text-right"><span class="text-corporate-blue mr-2 md:ml-2 md:mr-0 flex-shrink-0">✓</span> <span><strong>Precios Predictivos:</strong> IA analizando márgenes históricos.</span></li>
+                            <li class="flex items-start md:flex-row-reverse md:text-right"><span class="text-corporate-blue mr-2 md:ml-2 md:mr-0 flex-shrink-0">✓</span> <span><strong>Integración ERP:</strong> Conexión directa con sistemas de gestión.</span></li>
                         </ul>
                     </div>
-                    <div class="z-20 flex items-center order-1 bg-corporate-blue shadow-xl w-14 h-14 rounded-full justify-center font-bold text-white border-4 border-white text-sm text-center leading-tight">Mes<br>5-8</div>
+                    <div class="z-20 flex items-center order-1 bg-corporate-blue shadow-xl w-12 h-12 md:w-14 md:h-14 rounded-full justify-center font-bold text-white border-4 border-white text-xs md:text-sm text-center leading-tight">Mes<br>5-8</div>
                     <div class="order-1 md:w-5/12"></div>
                 </div>
 
                 <!-- FASE 3 -->
                 <div class="flex flex-col md:flex-row justify-between items-center w-full timeline-item delay-400">
                     <div class="order-1 md:w-5/12"></div>
-                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-14 h-14 rounded-full justify-center font-bold text-white border-4 border-white text-sm text-center leading-tight">Mes<br>9-12</div>
-                    <div class="order-1 bg-white rounded-xl card-shadow p-6 md:w-5/12 border-t-4 border-gray-800 mt-4 md:mt-0">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="font-heading font-bold text-xl text-gray-800">Fase 3: Ecosistema Cognitivo</h4>
-                            <span class="bg-gray-200 text-gray-800 text-xs font-bold px-2 py-1 rounded">Madurez</span>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-12 h-12 md:w-14 md:h-14 rounded-full justify-center font-bold text-white border-4 border-white text-xs md:text-sm text-center leading-tight">Mes<br>9-12</div>
+                    <div class="order-1 bg-white rounded-lg md:rounded-xl card-shadow p-4 md:p-6 w-full md:w-5/12 border-t-4 border-gray-800 mt-4 md:mt-0">
+                        <div class="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
+                            <h4 class="font-heading font-bold text-lg md:text-xl text-gray-800">Fase 3: Ecosistema Cognitivo</h4>
+                            <span class="bg-gray-200 text-gray-800 text-xs font-bold px-2 py-1 rounded whitespace-nowrap">Madurez</span>
                         </div>
-                        <p class="text-sm text-gray-600 mb-4">Automatización autónoma supervisada y optimización de materiales. Funcionalidades avanzadas de IA.</p>
-                        <ul class="text-sm space-y-2 text-metallic-gray">
-                            <li class="flex items-start"><span class="text-gray-800 mr-2">✓</span> <strong>Negociación Autónoma:</strong> Agentes cerrando tratos estándar.</li>
-                            <li class="flex items-start"><span class="text-gray-800 mr-2">✓</span> <strong>Optimización:</strong> IA sugiriendo mejoras de ingeniería.</li>
-                            <li class="flex items-start"><span class="text-gray-800 mr-2">✓</span> <strong>Análisis Predictivo:</strong> Modelos de ML para toma de decisiones.</li>
+                        <p class="text-xs md:text-sm text-gray-600 mb-3 md:mb-4">Automatización autónoma supervisada y optimización de materiales. Funcionalidades avanzadas de IA.</p>
+                        <ul class="text-xs md:text-sm space-y-1.5 md:space-y-2 text-metallic-gray">
+                            <li class="flex items-start"><span class="text-gray-800 mr-2 flex-shrink-0">✓</span> <span><strong>Negociación Autónoma:</strong> Agentes cerrando tratos estándar.</span></li>
+                            <li class="flex items-start"><span class="text-gray-800 mr-2 flex-shrink-0">✓</span> <span><strong>Optimización:</strong> IA sugiriendo mejoras de ingeniería.</span></li>
+                            <li class="flex items-start"><span class="text-gray-800 mr-2 flex-shrink-0">✓</span> <span><strong>Análisis Predictivo:</strong> Modelos de ML para toma de decisiones.</span></li>
                         </ul>
                     </div>
                 </div>
@@ -463,52 +513,52 @@
         </section>
 
         <!-- SECCIÓN 4: PRESUPUESTO Y COSTOS (NUEVA) -->
-        <section class="mb-16">
-            <div class="text-center mb-10 fade-in-up delay-500">
+        <section class="mb-12 md:mb-16">
+            <div class="text-center mb-6 md:mb-10 fade-in-up delay-500 px-2">
                 <h3 class="section-title">Estructura de Inversión y Operación</h3>
-                <p class="text-xl text-metallic-gray mt-2">Un modelo de costos transparente, eficiente y alineado a resultados.</p>
+                <p class="text-base md:text-xl text-metallic-gray mt-2">Un modelo de costos transparente, eficiente y alineado a resultados.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
                 
                 <!-- 1. COSTO DEL PROYECTO (CAPEX) -->
-                <div class="lg:col-span-2 bg-white rounded-2xl card-shadow p-8">
-                    <div class="flex justify-between items-center mb-6">
-                        <h4 class="font-heading font-bold text-xl text-corporate-blue">Inversión del Proyecto (CAPEX)</h4>
-                        <div class="flex flex-col items-end gap-1">
+                <div class="lg:col-span-2 bg-white rounded-xl md:rounded-2xl card-shadow p-5 md:p-6 lg:p-8">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 md:mb-6 gap-3">
+                        <h4 class="font-heading font-bold text-lg md:text-xl text-corporate-blue">Inversión del Proyecto (CAPEX)</h4>
+                        <div class="flex flex-col items-start sm:items-end gap-1 w-full sm:w-auto">
                             <span class="bg-blue-100 text-corporate-blue text-xs font-bold px-3 py-1 rounded-full">MVP: ~60M COP</span>
                             <span class="bg-gray-200 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full">Total Completo: ~94M COP</span>
                         </div>
                     </div>
-                    <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="flex flex-col md:flex-row items-center gap-6 md:gap-8">
                         <div class="w-full md:w-1/2">
-                            <div class="chart-container" style="height: 250px;">
+                            <div class="chart-container" style="height: 200px;">
                                 <canvas id="projectCostChart"></canvas>
                             </div>
                         </div>
-                        <div class="w-full md:w-1/2 space-y-4">
+                        <div class="w-full md:w-1/2 space-y-3 md:space-y-4">
                             <div class="flex items-start">
                                 <div class="w-4 h-4 bg-accent-green rounded mt-1 mr-3 flex-shrink-0"></div>
                                 <div>
-                                    <div class="font-bold text-gray-800">Fase 1: Núcleo & Arquitectura <span class="text-xs text-accent-green font-semibold">(MVP)</span></div>
-                                    <div class="text-sm text-gray-500">MVP Funcional + Diseño Arquitectónico Cloud</div>
-                                    <div class="font-bold text-corporate-blue text-sm mt-1">$60M COP (64%)</div>
+                                    <div class="font-bold text-gray-800 text-sm md:text-base">Fase 1: Núcleo & Arquitectura <span class="text-xs text-accent-green font-semibold">(MVP)</span></div>
+                                    <div class="text-xs md:text-sm text-gray-500">MVP Funcional + Diseño Arquitectónico Cloud</div>
+                                    <div class="font-bold text-corporate-blue text-xs md:text-sm mt-1">$60M COP (64%)</div>
                                 </div>
                             </div>
                             <div class="flex items-start opacity-75">
                                 <div class="w-4 h-4 bg-corporate-blue rounded mt-1 mr-3 flex-shrink-0"></div>
                                 <div>
-                                    <div class="font-bold text-gray-800">Fase 2: Integración ERP <span class="text-xs text-gray-500 font-normal">(Opcional)</span></div>
-                                    <div class="text-sm text-gray-500">Agentes de Compras + Conexión Proveedores</div>
-                                    <div class="font-bold text-corporate-blue text-sm mt-1">$20M COP (21%)</div>
+                                    <div class="font-bold text-gray-800 text-sm md:text-base">Fase 2: Integración ERP <span class="text-xs text-gray-500 font-normal">(Opcional)</span></div>
+                                    <div class="text-xs md:text-sm text-gray-500">Agentes de Compras + Conexión Proveedores</div>
+                                    <div class="font-bold text-corporate-blue text-xs md:text-sm mt-1">$20M COP (21%)</div>
                                 </div>
                             </div>
                             <div class="flex items-start opacity-75">
                                 <div class="w-4 h-4 bg-gray-600 rounded mt-1 mr-3 flex-shrink-0"></div>
                                 <div>
-                                    <div class="font-bold text-gray-800">Fase 3: Inteligencia Cognitiva <span class="text-xs text-gray-500 font-normal">(Opcional)</span></div>
-                                    <div class="text-sm text-gray-500">Agentes Autónomos + Optimización</div>
-                                    <div class="font-bold text-corporate-blue text-sm mt-1">$14M COP (15%)</div>
+                                    <div class="font-bold text-gray-800 text-sm md:text-base">Fase 3: Inteligencia Cognitiva <span class="text-xs text-gray-500 font-normal">(Opcional)</span></div>
+                                    <div class="text-xs md:text-sm text-gray-500">Agentes Autónomos + Optimización</div>
+                                    <div class="font-bold text-corporate-blue text-xs md:text-sm mt-1">$14M COP (15%)</div>
                                 </div>
                             </div>
                         </div>
@@ -516,35 +566,35 @@
                 </div>
 
                 <!-- 2. COSTO INFRAESTRUCTURA (OPEX) -->
-                <div class="bg-corporate-blue text-white rounded-2xl card-shadow p-8 price-card flex flex-col justify-between">
+                <div class="bg-corporate-blue text-white rounded-xl md:rounded-2xl card-shadow p-5 md:p-6 lg:p-8 price-card flex flex-col justify-between">
                     <div>
-                        <h4 class="font-heading font-bold text-xl text-accent-green mb-2">Costo Operativo Mensual</h4>
-                        <p class="text-blue-200 text-sm mb-4">Infraestructura Dinámica (AWS/Vercel/Railway) + IA</p>
+                        <h4 class="font-heading font-bold text-lg md:text-xl text-accent-green mb-2">Costo Operativo Mensual</h4>
+                        <p class="text-blue-200 text-xs md:text-sm mb-4">Infraestructura Dinámica (AWS/Vercel/Railway) + IA</p>
                         <div class="bg-blue-900/30 rounded-lg px-3 py-2 mb-4">
                             <div class="text-xs text-accent-green font-bold mb-1">✓ Infraestructura Flexible y Escalable</div>
                             <div class="text-xs text-blue-200">Ajustable según requerimientos: máquinas AWS, serverless, o híbrido</div>
                         </div>
                         
-                        <div class="text-center py-6 border-t border-blue-800 border-b mb-6">
-                            <div class="text-4xl font-extrabold text-white">~$1.0M <span class="text-lg font-normal text-blue-300">COP/mes</span></div>
+                        <div class="text-center py-4 md:py-6 border-t border-blue-800 border-b mb-4 md:mb-6">
+                            <div class="text-3xl md:text-4xl font-extrabold text-white">~$1.0M <span class="text-base md:text-lg font-normal text-blue-300">COP/mes</span></div>
                             <div class="text-xs text-blue-300 mt-2">Estimado para 20 Cotizaciones/Día</div>
                             <div class="text-xs text-yellow-300 mt-1 font-semibold">*Incluye margen del 30% para variaciones</div>
                         </div>
 
-                        <ul class="space-y-3 text-sm text-blue-100">
-                            <li class="flex items-center justify-between">
+                        <ul class="space-y-2 md:space-y-3 text-xs md:text-sm text-blue-100">
+                            <li class="flex items-center justify-between flex-wrap gap-1">
                                 <span>Compute (AWS EC2/Serverless):</span>
                                 <span class="font-bold">~400k COP</span>
                             </li>
-                            <li class="flex items-center justify-between">
+                            <li class="flex items-center justify-between flex-wrap gap-1">
                                 <span>IA Tokens (Gemini):</span>
                                 <span class="font-bold">~300k COP</span>
                             </li>
-                            <li class="flex items-center justify-between">
+                            <li class="flex items-center justify-between flex-wrap gap-1">
                                 <span>Base de Datos (RDS/PostgreSQL):</span>
                                 <span class="font-bold">~200k COP</span>
                             </li>
-                            <li class="flex items-center justify-between border-t border-blue-800 pt-2 mt-2">
+                            <li class="flex items-center justify-between border-t border-blue-800 pt-2 mt-2 flex-wrap gap-1">
                                 <span class="text-accent-green font-semibold">Margen de Seguridad (30%):</span>
                                 <span class="font-bold text-accent-green">~100k COP</span>
                             </li>
@@ -557,7 +607,7 @@
                         </div>
                     </div>
                     
-                    <div class="mt-8 pt-4 border-t border-blue-800">
+                    <div class="mt-6 md:mt-8 pt-4 border-t border-blue-800">
                         <div class="text-xs text-accent-green font-bold uppercase mb-1">Valor Agregado</div>
                         <p class="text-xs text-blue-200">
                             Este costo operativo representa < 10% del salario de un analista senior, liberando el 80% de su tiempo. Infraestructura escalable que se adapta al crecimiento del negocio.
@@ -567,17 +617,17 @@
             </div>
 
             <!-- 3. ARQUITECTURA -->
-            <div class="mt-8 bg-gray-100 rounded-xl p-6 border border-gray-200 flex flex-col md:flex-row items-center justify-between">
-                    <div class="mb-4 md:mb-0">
-                    <h5 class="font-heading font-bold text-lg text-metallic-gray">Inversión en Arquitectura</h5>
-                    <p class="text-sm text-gray-500">Incluido en la Fase 1 (MVP). Garantiza escalabilidad y seguridad desde el Día 0 con infraestructura moderna y optimizada.</p>
+            <div class="mt-6 md:mt-8 bg-gray-100 rounded-lg md:rounded-xl p-4 md:p-6 border border-gray-200 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                    <div class="flex-1">
+                    <h5 class="font-heading font-bold text-base md:text-lg text-metallic-gray mb-2">Inversión en Arquitectura</h5>
+                    <p class="text-xs md:text-sm text-gray-500">Incluido en la Fase 1 (MVP). Garantiza escalabilidad y seguridad desde el Día 0 con infraestructura moderna y optimizada.</p>
                 </div>
-                <div class="flex items-center gap-4">
-                    <div class="text-right">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-4 w-full md:w-auto">
+                    <div class="text-left sm:text-right">
                         <div class="text-xs font-bold text-gray-500 uppercase">Valor de Mercado</div>
-                        <div class="font-bold text-corporate-blue text-lg">~$18M COP</div>
+                        <div class="font-bold text-corporate-blue text-base md:text-lg">~$18M COP</div>
                     </div>
-                    <div class="bg-white px-4 py-2 rounded shadow text-sm font-semibold text-accent-green border border-accent-green">
+                    <div class="bg-white px-3 md:px-4 py-2 rounded shadow text-xs md:text-sm font-semibold text-accent-green border border-accent-green whitespace-nowrap">
                         Incluido en MVP
                     </div>
                 </div>
@@ -585,15 +635,15 @@
         </section>
 
         <!-- CALL TO ACTION -->
-        <footer class="bg-corporate-blue text-white rounded-2xl p-8 md:p-12 text-center shadow-2xl mt-16 fade-in-up delay-300">
-            <h2 class="font-heading font-bold text-3xl mb-4">Aceleremos el Futuro</h2>
-            <p class="text-blue-200 text-lg mb-8 max-w-2xl mx-auto">
+        <footer class="bg-corporate-blue text-white rounded-xl md:rounded-2xl p-6 md:p-8 lg:p-12 text-center shadow-2xl mt-12 md:mt-16 fade-in-up delay-300">
+            <h2 class="font-heading font-bold text-2xl md:text-3xl mb-3 md:mb-4 px-2">Aceleremos el Futuro</h2>
+            <p class="text-blue-200 text-base md:text-lg mb-6 md:mb-8 max-w-2xl mx-auto px-4">
                 Nuestro Squad está listo para desplegar la Fase 1 inmediatamente con una arquitectura sólida y costos transparentes.
             </p>
-            <a href="https://wa.me/573014187349?text=Hola%20Camilo,%20estamos%20interesados%20en%20la%20propuesta." target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-green text-corporate-blue font-bold py-3 px-8 rounded-full hover:bg-white hover:text-corporate-blue transition duration-300 transform hover:scale-105 shadow-lg">
+            <a href="https://wa.me/573014187349?text=Hola%20Camilo,%20estamos%20interesados%20en%20la%20propuesta." target="_blank" rel="noopener noreferrer" class="inline-block bg-accent-green text-corporate-blue font-bold py-2.5 md:py-3 px-6 md:px-8 rounded-full hover:bg-white hover:text-corporate-blue transition duration-300 transform hover:scale-105 shadow-lg text-sm md:text-base">
                 Iniciar Diagnóstico & Setup Cloud
             </a>
-            <p class="text-xs text-blue-300 mt-8">© 2025 Propuesta Confidencial para Metalprest S.A.S</p>
+            <p class="text-xs text-blue-300 mt-6 md:mt-8 px-4">© 2025 Propuesta Confidencial para Metalprest S.A.S</p>
         </footer>
 
     </div>
